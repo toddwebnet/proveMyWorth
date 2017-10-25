@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group([
+    'prefix' => 'test',
+], function () {
+    Route::get('/', 'TestController@index');
+    Route::get('/testJob', 'TestController@testJob');
+    Route::get('/results', 'TestController@results');
+    
+});
