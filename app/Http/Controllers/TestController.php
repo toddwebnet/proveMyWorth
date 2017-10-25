@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\TestJob;
+
 use App\Models\Job;
 use App\Models\TestJob as TestJobModel;
+use App\Services\TestJobService;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -17,7 +18,8 @@ class TestController extends Controller
 
     public function testJob()
     {
-        $this->dispatch(new TestJob());
+        TestJobService::dispatchTestJob();
+
     }
 
     public function results()

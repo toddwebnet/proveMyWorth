@@ -22,5 +22,5 @@ Route::group([
     Route::get('/', 'TestController@index');
     Route::get('/testJob', 'TestController@testJob');
     Route::get('/results', 'TestController@results');
-    
+
 });
