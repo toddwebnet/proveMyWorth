@@ -22,5 +22,7 @@ Route::group([
     Route::get('/', 'TestController@index');
     Route::get('/testJob', 'TestController@testJob');
     Route::get('/results', 'TestController@results');
+    Route::get('/mail', 'TestController@mail');
+    Route::get('/mailDispatch', 'TestController@mailDispatch');
 
 });
