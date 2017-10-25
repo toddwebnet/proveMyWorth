@@ -6,7 +6,6 @@ use App\Models\TestJob;
 use App\Services\TestJobService;
 use Tests\AppTestCase;
 
-
 class TestJobTest extends AppTestCase
 {
     public function testTestJob()
