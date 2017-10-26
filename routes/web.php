@@ -24,5 +24,8 @@ Route::group([
     Route::get('/results', 'TestController@results');
     Route::get('/mail', 'TestController@mail');
     Route::get('/mailDispatch', 'TestController@mailDispatch');
-
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
