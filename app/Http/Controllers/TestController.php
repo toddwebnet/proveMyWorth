@@ -33,10 +33,10 @@ class TestController extends Controller
     }
 
     public function mailDispatch(){
-        SendEmailService::sendMailDispatch(env('SEND_MAIL_TO'), env('SEND_MAIL_FROM'), 'Dispacthed: Test Subject', 'emails.test' );
+        SendEmailService::sendMailDispatch(env('MAIL_TO_ADDRESS'), env('MAIL_FROM_ADDRESS'), 'Dispacthed: Test Subject', 'emails.test' );
     }
     public function mail()
     {
-        SendEmailService::sendMail(env('SEND_MAIL_TO'), env('SEND_MAIL_FROM'), 'Test Subject', 'emails.test' );
+        SendEmailService::sendMail(env('MAIL_TO_ADDRESS'), env('MAIL_FROM_ADDRESS'), 'Test Subject', 'emails.test' );
     }
 }
