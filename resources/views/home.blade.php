@@ -13,7 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div id="mainContent"></div>
+                        <div id="mainContent"></div>
+                        <div id="errorContent" style="display:none"></div>
                 </div>
             </div>
         </div>

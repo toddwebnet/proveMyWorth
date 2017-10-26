@@ -16,7 +16,7 @@ function loadDashboard() {
     });
 }
 
-function editProfile(){
+function editProfile() {
     placeSpinner();
     url = '/ajax/profile'
     $.ajax({
@@ -24,6 +24,9 @@ function editProfile(){
         cache: false,
         success: function (content) {
             $('#mainContent').html(content);
+        }, error: function (content) {
+            $('#errorContent').html("<pre>" + content.responseText + "</pre>");
+            $('#errorContent').show();
         }
     });
 }
@@ -33,18 +36,20 @@ function placeSpinner() {
     $('#mainContent').html(spinnerHTML);
 }
 
-function saveProfile()
-{
+function saveProfile() {
     formData = $('#profileForm').serialize();
 
     url = '/ajax/profile';
     $.ajax({
         url: url,
-        type:'POST',
+        type: 'POST',
         data: formData,
         cache: false,
         success: function (content) {
             $('#mainContent').html(content);
+        }, error: function (content) {
+            $('#errorContent').html("<pre>" + content.responseText + "</pre>");
+            $('#errorContent').show();
         }
     });
 
