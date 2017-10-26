@@ -29,3 +29,12 @@ Route::group([
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group([
+    'prefix' => 'ajax',
+], function () {
+    Route::get('/dashboard', 'AjaxController@dashboard');
+    Route::get('/profile', 'AjaxController@profileForm');
+    Route::post('/profile', 'AjaxController@saveProfile');
+});
