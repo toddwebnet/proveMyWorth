@@ -24,6 +24,7 @@ Route::group([
     Route::get('/results', 'TestController@results');
     Route::get('/mail', 'TestController@mail');
     Route::get('/mailDispatch', 'TestController@mailDispatch');
+    Route::get('/geo', 'TestController@geo');
 });
 
 Auth::routes();

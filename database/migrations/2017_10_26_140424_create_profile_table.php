@@ -19,8 +19,8 @@ class CreateProfileTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('zip');
-            $table->string('latitude');
-            $table->string('longitude');
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->timestamps();
         });
         Schema::create('user_profiles', function (Blueprint $table) {

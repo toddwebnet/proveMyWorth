@@ -9,16 +9,13 @@ class UserObserver
 {
     public function created($model)
     {
-
-
         $address = Address::create([
             'street' => '',
             'city' => '',
             'state' => '',
             'zip' => '',
-            'latitude' => '',
-            'longitude' => '',
         ]);
+
         $userProfile = UserProfile::create([
             'user_id' => $model->id,
             'birthdate' => '1955-11-05',

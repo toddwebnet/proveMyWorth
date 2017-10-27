@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Address;
 use App\Models\User;
+use App\Observers\AddressObserver;
 use App\Observers\UserObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -30,5 +32,6 @@ class EventServiceProvider extends ServiceProvider
         parent::boot();
 
         User::observe(UserObserver::class);
+        Address::observe(AddressObserver::class);
     }
 }

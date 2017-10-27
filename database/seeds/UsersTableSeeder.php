@@ -34,16 +34,13 @@ class UsersTableSeeder extends Seeder
 
 
             $address = [
-                'street' => $faker->streetAddress,
-                'city' => $faker->city,
+                'street' => '11107 Sunset Hills Road',
+                'city' => 'Reston',
                 'state' => "VA",
-                'latitude' => '38.946593',
-                'longitude' => '-77.328880',
+                'zip' => '20190'
             ];
 
             $userProfile->address()->update($address);
-
-
         }
     }
 }
