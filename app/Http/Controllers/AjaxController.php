@@ -43,8 +43,25 @@ class AjaxController extends Controller
         return view('ajax.profileform', $data);
     }
 
+    protected function saveProfileValidator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|string|max:150',
+            'email' => 'required|string|email|max:150',
+            'birthdate' => 'required|date',
+            'phone_number' => 'required|max:150',
+            'street'=> 'required|max:150',
+            'city'=> 'required|max:150',
+            'state'=> 'required|max:150',
+            'zip'=> 'required|max:150',
+            'latitude'=> 'required|max:150',
+            'longitude'=> 'required|max:150',
+        ]);
+    }
     public function saveProfile(Request $request)
     {
+        $this->saveProfileValidator($request->all())->validate();
+
         $user = Auth::user();
         $userProfile = $user->userProfile()->get()->first();
         $address = $userProfile->address()->get()->first();

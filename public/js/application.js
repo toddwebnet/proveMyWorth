@@ -38,7 +38,6 @@ function placeSpinner() {
 
 function saveProfile() {
     formData = $('#profileForm').serialize();
-
     url = '/ajax/profile';
     $.ajax({
         url: url,
